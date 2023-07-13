@@ -23,7 +23,7 @@
 
 .light-mode {
   --color-primary: #FFFFFF;
-  --color-secondary: #ec9f61;
+  --color-secondary: #f67d1a;
   --color-white: #454e56;
   --color-black: #000;
   --color-grey0: #f8f8f8;
@@ -415,6 +415,14 @@ section {
   border-radius: 15px;
   text-align: center;
 }
+
+.portfolios .portfolio-item h3{
+  position: relative;
+  border-radius: 15px;
+  text-align: center;
+  color: var(--color-secondary);
+}
+
 .portfolios .portfolio-item img {
   width: 100%;
   height: 300px;
