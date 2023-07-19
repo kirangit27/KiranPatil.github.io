@@ -511,7 +511,7 @@ section {
 }
 .certifications .certificate img {
   width: 100%;
-  height: 250px;
+  height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
   border-top-left-radius: 5px;
@@ -519,6 +519,37 @@ section {
   filter: grayscale(100%);
   transition: all 0.4s ease-in-out;
 }
+
+.certifications .certificate:hover .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.certifications .certificate:hover  .icons .icon {
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+.certifications .certificate:hover  .icons .icon i {
+  font-size: 1.5rem;
+  color: var(--color-white);
+  margin: 0 1rem;
+}
+.certifications .certificate:hover .icons .icon:hover {
+  background-color: var(--color-white);
+}
+.certifications .certificate:hover  .icons .icon:hover i {
+  color: var(--color-primary);
+}
+
 .certifications .certificate .certificate-text {
   margin-top: -7px;
   padding: 1.1rem;
