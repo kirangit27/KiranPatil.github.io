@@ -385,7 +385,7 @@ section {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
     margin-top: 3rem;
-    .portfolio-item {
+    .portfolio_item {
         position: relative;
         border-radius: 15px;
         img {
@@ -444,7 +444,7 @@ section {
     }
 }
 
-.portfolio-item:hover .hover-items {
+.portfolio_item:hover .hover-items {
     opacity: 1;
     transform: scale(1);
 }
