@@ -572,8 +572,15 @@ section {
 }
 .certifications .certificate .certificate-text p {
   color: var(--color-grey-2);
-  line-height: 2rem;
+  /* line-height: 2rem; */
   padding-bottom: 1rem;
+  text-align: justify;
+}
+.certifications .certificate .certificate-text ul {
+  /* color: var(--color-grey-2); */
+  /* line-height: 2rem; */
+  padding-bottom: 1rem;
+  text-align: justify;
 }
 
 
