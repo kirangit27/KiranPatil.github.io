@@ -10,4 +10,17 @@
     document.querySelector(".theme-btn").addEventListener("click", () => {
         document.body.classList.toggle("light-mode");
     })
+
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.content');
+
+    tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('selected'));
+        contents.forEach(c => c.classList.remove('selected'));
+        tab.classList.add('selected');
+        const contentId = tab.textContent.toLowerCase().replace(/\s/g, '-');
+        document.getElementById(contentId).classList.add('selected');
+    });
+    });
 })();
