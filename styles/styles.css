@@ -625,14 +625,15 @@ section {
   /* line-height: 2rem; */
   padding-bottom: 1rem;
   text-align: justify;
-  overflow: scroll;
+}
+.certifications .certificate .certificate-text .scroll-text {
+  overflow-y: scroll;
 }
 .certifications .certificate .certificate-text ul {
   /* color: var(--color-grey-2); */
   /* line-height: 2rem; */
   padding-bottom: 1rem;
   text-align: justify;
-  overflow: scroll;
 }
 
 
