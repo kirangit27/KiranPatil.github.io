@@ -1018,6 +1018,25 @@ section {
   border: 1px solid #ddd;
 }
 
+.port-tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.port-tab:hover{
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.port-tab.selected {
+  background-color: #eee;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
 .content-wrapper {
   padding: 20px;
 }
@@ -1025,11 +1044,19 @@ section {
 .content {
   display: none;
 }
+.port-content{
+  display: none;
+}
 
 .content.selected {
   display: block;
-  animation: slide 1s ease-in-out;
+  animation: move 1s ease-in-out;
   /* transform: translateY(0) scaleY(1); */
+}
+
+.port-content.selected{
+  display: grid;
+  animation: move 1s ease-in-out;
 }
 @keyframes slide {
   0% {
