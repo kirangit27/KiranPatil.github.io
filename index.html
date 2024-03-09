@@ -14,6 +14,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
 
 </head>
 
@@ -26,25 +28,14 @@
                     <img src="img/home.JPG" alt="">
                 </div>
                 <div class="text-container">
-                    <span class="title">Hello and Welcome! I'm Kiran Patil</h2>
-                        <br></br>
-                        <span class="description">a passionate robotics engineer exploring the exciting realms of Deep Learning and Computer Vision. 
-                            Currently a Robotics Grad student @ University of Maryland - College Park.
-                        </span>
-                        <span class="description">Explore My Work:
-                            Dive into my portfolio to explore a collection of projects that highlight my journey in robotics, deep learning, and computer vision. 
-                            Each project is a testament to my commitment to innovation and problem-solving.
-                        </span>
+                    <span class="title" id="intro-name"></span>
+                    <span class="description" id="intro-content">
+                    </span>
                 </div>
             </div>
             <div class="right-header">
-                <!-- <h1 class="name">
-                    Hi, I'm <span>Kiran Patil</span>
-                    
-                </h1>
-                <p>
-                    A second year masters student, pursuing M.Eng. in Robotics from University of Maryland - College Park.
-                </p> -->
+                <img src="./img/home-gif.webp" width="100%" height="400px" />
+                <br></br>
                 <div class="btn-con">
                     <a href="pdf/kiran-resume.pdf" download target="_blank" class="main-btn">
                         <span class="btn-text">Download CV</span>
@@ -61,18 +52,28 @@
         <section class="container" id="portfolio">
             <div class="main-title">
                 <h2>My <span>Portfolio</span><span class="bg-text">Portfolio</span></h2>
+                <div class="cert-container">
+                    <div class="tabs">
+                        <li class="port-tab selected">Perception</li>
+                        <li class="port-tab">Motion Planning</li>
+                    </div>
+                </div>
             </div>
-            <p class="port-text">
+
+            <!-- <p class="port-text">
                 Here is some of my work that I've done in various domains.
-            </p>
-            <h2> Perception</h2>
-            <div class="portfolios">
+            </p> -->
+
+            <div class="portfolios port-content selected" id="perception">
 
                 <div class="portfolio_item">
                     <div class="image">
                         <img src="img/ARIAC.png" alt="">
                     </div>
                     <div class="hover-items" style="">
+                        <div class="hover-image">
+                            <img src="img/HB.png" alt="">
+                        </div>
                         <div class="icons">
                             <a href="https://github.com/kirangit27/ARIAC-2023.git" class="icon">
                                 <i class="fab fa-github"></i>
@@ -119,8 +120,8 @@
                 </div>
             </div>
 
-            <h2> Motion Planning</h2>
-            <div class="portfolios">
+
+            <div class="portfolios port-content" id="motion-planning">
                 <div class="portfolio_item">
                     <div class="image">
                         <img src="img/ARIAC.png" alt="">
@@ -218,7 +219,8 @@
                             <img src="img/Camera_and_Imaging.png" alt="">
                             <div class="certificate_hover">
                                 <div class="icons">
-                                    <a href="https://github.com/kirangit27/First_Principles_of_CV-C1-Camera_and_Imaging.git" class="icon">
+                                    <a href="https://github.com/kirangit27/First_Principles_of_CV-C1-Camera_and_Imaging.git"
+                                        class="icon">
                                         <i class="fab fa-github"></i>
                                     </a>
                                     <a href="https://coursera.org/share/5fcea595c6768837a507e9f60f287672" class="icon">
@@ -258,7 +260,8 @@
                             <img src="img/Course_2_photo.png" alt="">
                             <div class="certificate_hover">
                                 <div class="icons">
-                                    <a href="https://github.com/kirangit27/First_Principles_of_CV-C2-Features-and-Boundaries.git" class="icon">
+                                    <a href="https://github.com/kirangit27/First_Principles_of_CV-C2-Features-and-Boundaries.git"
+                                        class="icon">
                                         <i class="fab fa-github"></i>
                                     </a>
                                     <a href="https://coursera.org/share/0b75c0cd7342910f17e5274c6f0e01ed" class="icon">
@@ -298,7 +301,8 @@
                             <img src="img/Course_3_photo.png" alt="">
                             <div class="certificate_hover">
                                 <div class="icons">
-                                    <a href="https://github.com/kirangit27/First_Principles_of_CV-C3-3D_Reconstruction-Single_Viewpoint.git" class="icon">
+                                    <a href="https://github.com/kirangit27/First_Principles_of_CV-C3-3D_Reconstruction-Single_Viewpoint.git"
+                                        class="icon">
                                         <i class="fab fa-github"></i>
                                     </a>
                                     <a href="https://coursera.org/share/0b75c0cd7342910f17e5274c6f0e01ed" class="icon">
@@ -339,7 +343,8 @@
                             <img src="img/Course_4_photo.png" alt="">
                             <div class="certificate_hover">
                                 <div class="icons">
-                                    <a href="https://github.com/kirangit27/First_Principles_of_CV-C4-3D_Reconstruction-Multiple_Viewpoint.git" class="icon">
+                                    <a href="https://github.com/kirangit27/First_Principles_of_CV-C4-3D_Reconstruction-Multiple_Viewpoint.git"
+                                        class="icon">
                                         <i class="fab fa-github"></i>
                                     </a>
                                     <a href="https://coursera.org/share/e38c271eb552ecc290c6ddf05e20ab07" class="icon">
@@ -357,10 +362,14 @@
                             </p>
                             <ul class="scroll-text">
                                 Course Modules:
-                                <li><strong>Camera Calibration</strong> - Linear Camera Model, Intrinsic and Extrinsic Matrices, and Simple Stereo.</li>
-                                <li><strong>Uncalibrated Stereo</strong> - Epipolar Geometry, Fundamental Matrix, Finding Correspondences, and  Computing Depth.</li>
-                                <li><strong>Optical Flow</strong> -  Motion Field and Optical Flow Constraint Equation,  Lucas-Kanade Method, and Coarse-to-Fine Flow Estimation</li>
-                                <li><strong>Structure from Motion</strong> - SfM and Rank of Observation Matrix, and Tomasi-Kanade Factorization</li>
+                                <li><strong>Camera Calibration</strong> - Linear Camera Model, Intrinsic and Extrinsic
+                                    Matrices, and Simple Stereo.</li>
+                                <li><strong>Uncalibrated Stereo</strong> - Epipolar Geometry, Fundamental Matrix,
+                                    Finding Correspondences, and Computing Depth.</li>
+                                <li><strong>Optical Flow</strong> - Motion Field and Optical Flow Constraint Equation,
+                                    Lucas-Kanade Method, and Coarse-to-Fine Flow Estimation</li>
+                                <li><strong>Structure from Motion</strong> - SfM and Rank of Observation Matrix, and
+                                    Tomasi-Kanade Factorization</li>
                             </ul>
                         </div>
                     </div>
@@ -370,7 +379,8 @@
                             <img src="img/Course_5.jpeg" alt="">
                             <div class="certificate_hover">
                                 <div class="icons">
-                                    <a href="https://github.com/kirangit27/First_Principles_of_CV-C5-Visual_Perception.git" class="icon">
+                                    <a href="https://github.com/kirangit27/First_Principles_of_CV-C5-Visual_Perception.git"
+                                        class="icon">
                                         <i class="fab fa-github"></i>
                                     </a>
                                     <a href="https://coursera.org/share/0c1e7a065f3201b7da6b91d235c9882f" class="icon">
@@ -388,10 +398,15 @@
                             </p>
                             <ul class="scroll-text">
                                 Course Modules:
-                                <li><strong>Object Tracking</strong> - Change Detection, Gaussian Mixture Model, Object Tracking using Templates, and Tracking by Feature Detection</li>
-                                <li><strong>Image Segmentation</strong> - Segmentation by Humans, Segmentation as Clustering, k-Means, Mean-Shift, and  Graph Based Segmentation.</li>
-                                <li><strong>Appearance Matching</strong> -  Shape vs. Appearance, Learning Appearance, Principal Component Analysis, PCA and SVD, and Parametric Appearance Representation.</li>
-                                <li><strong>Neural Networks</strong> - Perceptron Network, Activation Function, Gradient Descent, and Backpropagation Algorithm.</li>
+                                <li><strong>Object Tracking</strong> - Change Detection, Gaussian Mixture Model, Object
+                                    Tracking using Templates, and Tracking by Feature Detection</li>
+                                <li><strong>Image Segmentation</strong> - Segmentation by Humans, Segmentation as
+                                    Clustering, k-Means, Mean-Shift, and Graph Based Segmentation.</li>
+                                <li><strong>Appearance Matching</strong> - Shape vs. Appearance, Learning Appearance,
+                                    Principal Component Analysis, PCA and SVD, and Parametric Appearance Representation.
+                                </li>
+                                <li><strong>Neural Networks</strong> - Perceptron Network, Activation Function, Gradient
+                                    Descent, and Backpropagation Algorithm.</li>
                             </ul>
                         </div>
                     </div>
@@ -513,7 +528,8 @@
                             <img src="img/LinearAlgebra.png" alt="">
                             <div class="certificate_hover">
                                 <div class="icons">
-                                    <a href="https://github.com/kirangit27/Linear-Algebra-for-Machine-Learning-and-Data-Science.git" class="icon">
+                                    <a href="https://github.com/kirangit27/Linear-Algebra-for-Machine-Learning-and-Data-Science.git"
+                                        class="icon">
                                         <i class="fab fa-github"></i>
                                     </a>
                                     <a href="https://coursera.org/share/6c8de9c06ee32fc625ac660b912a7022" class="icon">
@@ -530,13 +546,14 @@
                                 Course 1/3
                             </p>
                             <ul class="scroll-text">
-                                <li>• Represent data as vectors and matrices and identify their properties using concepts of
+                                <li>• Represent data as vectors and matrices and identify their properties using
+                                    concepts of
                                     singularity, rank, and linear independence, etc.</li>
                                 <li>• Apply common vector and matrix algebra operations like dot product, inverse, and
                                     determinants.</li>
                                 <li>• Express certain types of matrix operations as linear transformations.</li>
                                 <li>• Apply concepts of eigenvalues and eigenvectors to machine learning problems.</li>
-                            </ul>  
+                            </ul>
                         </div>
                     </div>
 
@@ -545,7 +562,8 @@
                             <img src="img/Calc_DL.png" alt="">
                             <div class="certificate_hover">
                                 <div class="icons">
-                                    <a href="https://github.com/kirangit27/Calculus-for-Machine-Learning-and-Data-Science.git" class="icon">
+                                    <a href="https://github.com/kirangit27/Calculus-for-Machine-Learning-and-Data-Science.git"
+                                        class="icon">
                                         <i class="fab fa-github"></i>
                                     </a>
                                     <a href="https://coursera.org/share/d7f2847874b366dd2192f89b9d68ce4c" class="icon">
@@ -562,13 +580,18 @@
                                 Course 2/3
                             </p>
                             <ul class="scroll-text">
-                                <li>• Analytically optimize different types of functions commonly used in machine learning
+                                <li>• Analytically optimize different types of functions commonly used in machine
+                                    learning
                                     using properties of derivatives and gradients. </li>
-                                <li>• Approximately optimize different types of functions commonly used in machine learning
-                                    using first-order (gradient descent) and second-order (Newton’s method) iterative methods.</li>
-                                <li>• Visually interpret differentiation of different types of functions commonly used in
+                                <li>• Approximately optimize different types of functions commonly used in machine
+                                    learning
+                                    using first-order (gradient descent) and second-order (Newton’s method) iterative
+                                    methods.</li>
+                                <li>• Visually interpret differentiation of different types of functions commonly used
+                                    in
                                     machine learning. </li>
-                                <li>• Perform gradient descent in neural networks with different activation and cost functions.</li>
+                                <li>• Perform gradient descent in neural networks with different activation and cost
+                                    functions.</li>
                             </ul>
                         </div>
                     </div>
@@ -578,7 +601,8 @@
                             <img src="img/Prob-DL.png" alt="">
                             <div class="certificate_hover">
                                 <div class="icons">
-                                    <a href="https://github.com/kirangit27/Probability-and-Statistics-for-Machine-Learning-and-Data-Science.git" class="icon">
+                                    <a href="https://github.com/kirangit27/Probability-and-Statistics-for-Machine-Learning-and-Data-Science.git"
+                                        class="icon">
                                         <i class="fab fa-github"></i>
                                     </a>
                                     <!-- <a href="https://coursera.org/share/d7f2847874b366dd2192f89b9d68ce4c" class="icon">
@@ -595,18 +619,22 @@
                                 Course 3/3
                             </p>
                             <ul class="scroll-text">
-                                <li>• Describe and quantify the uncertainty inherent in predictions made by machine learning
+                                <li>• Describe and quantify the uncertainty inherent in predictions made by machine
+                                    learning
                                     models, using the concepts of probability, random variables, and probability
                                     distributions.</li>
                                 <li>• Visually and intuitively understand the properties of commonly used probability
                                     distributions in machine learning and data science like Bernoulli, Binomial, and
                                     Gaussian
                                     distributions.</li>
-                                <li>• Apply common statistical methods like maximum likelihood estimation (MLE) and maximum a
+                                <li>• Apply common statistical methods like maximum likelihood estimation (MLE) and
+                                    maximum a
                                     priori estimation (MAP) to machine learning problems.</li>
-                                <li>• Assess the performance of machine learning models using interval estimates and margin
+                                <li>• Assess the performance of machine learning models using interval estimates and
+                                    margin
                                     of errors. </li>
-                                <li>• Apply concepts of statistical hypothesis testing to commonly used tests in data science
+                                <li>• Apply concepts of statistical hypothesis testing to commonly used tests in data
+                                    science
                                     like AB testing.</li>
                             </ul>
                         </div>
@@ -626,8 +654,10 @@
                     <div class="left-contact">
                         <h4>Contact me here</h4>
                         <p>
-                            I'm always open to collaboration and eager to connect with fellow enthusiasts, researchers, and professionals. 
-                            Whether you're interested in robotics, deep learning, or simply passionate about the intersection of technology and creativity, 
+                            I'm always open to collaboration and eager to connect with fellow enthusiasts, researchers,
+                            and professionals.
+                            Whether you're interested in robotics, deep learning, or simply passionate about the
+                            intersection of technology and creativity,
                             let's embark on this journey together.
                             Thank you for visiting, and I look forward to sharing my world of robotics with you!
                         </p>
@@ -668,15 +698,6 @@
                                     <span>: +1(240)-927-8819</span>
                                 </p>
                             </div>
-                            <!-- <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-globe-americas"></i>
-                                    <span>Languages</span>
-                                </div>
-                                <p>
-                                    <span>: English, Hindi, Marathi</span>
-                                </p>
-                            </div> -->
                         </div>
                         <div class="contact-icons">
                             <div class="contact-icon">
@@ -687,12 +708,6 @@
                                 <a href="https://www.youtube.com/@kiranpatil1626" target="_blank">
                                     <i class="fab fa-youtube"></i>
                                 </a>
-                                <!-- <a href="www.facebook.com" target="_blank">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a> -->
-                                <!-- <a href="#" target="_blank">
-                                    <i class="fa-regular fa-code"></i>
-                                </a> -->
                             </div>
                         </div>
                     </div>
@@ -729,12 +744,6 @@
         <div class="control" data-id="portfolio">
             <i class="fas fa-briefcase"></i>
         </div>
-        <!-- <div class="control" data-id="courses">
-            <i class="fas fa-certificate"></i>
-        </div> -->
-        <!-- <div class="control" data-id="about">
-            <i class="fas fa-user"></i>
-        </div> -->
         <div class="control" data-id="certifications">
             <i class="fas fa-file-contract"></i>
         </div>
@@ -746,6 +755,19 @@
         <i class="fas fa-adjust"></i>
     </div>
     <script src="app.js"></script>
+    <script>
+        var typed = new Typed('#intro-name', {
+            strings: ["Hello, I'm Kiran patil"],
+            typeSpeed: 50,
+            startDelay: 1000,
+            showCursor: false,
+            onComplete: (arrayPos, self) => {
+                const introContent = document.getElementById('intro-content');
+                introContent.classList.add('fade-anim');
+                introContent.innerText = "A passionate robotics engineer exploring the exciting realms of Deep Learning and Computer Vision.Currently a Robotics Grad student @University of Maryland - College Park.";
+            }
+        });
+    </script>
 </body>
 
 </html>
