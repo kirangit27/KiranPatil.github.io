@@ -122,11 +122,15 @@
 
 
             <div class="portfolios port-content" id="motion-planning">
+
                 <div class="portfolio_item">
                     <div class="image">
                         <img src="img/ARIAC.png" alt="">
                     </div>
                     <div class="hover-items" style="">
+                        <div class="hover-image">
+                            <img src="img/rwa3.gif" alt="">
+                        </div>
                         <div class="icons">
                             <a href="https://github.com/kirangit27/ARIAC-2023.git" class="icon">
                                 <i class="fab fa-github"></i>
@@ -139,11 +143,15 @@
                     <h3>ARIAC-2023</h3>
                 </div>
 
+
                 <div class="portfolio_item">
                     <div class="image">
                         <img src="img/HB.png" alt="">
                     </div>
                     <div class="hover-items" style="">
+                        <!-- <div class="hover-image">
+                            <img src="img/rwa3.gif" alt="">
+                        </div> -->
                         <div class="icons">
                             <a href="https://www.youtube.com/watch?v=-e3T02XQMJo&list=PLK0jpMYIBd6BRbn75fdJzu5Z3syWnxY8t&index=6"
                                 class="icon">
@@ -657,8 +665,7 @@
                             I'm always open to collaboration and eager to connect with fellow enthusiasts, researchers,
                             and professionals.
                             Whether you're interested in robotics, deep learning, or simply passionate about the
-                            intersection of technology and creativity,
-                            let's embark on this journey together.
+                            intersection of technology and creativity,let's embark on this journey together.
                             Thank you for visiting, and I look forward to sharing my world of robotics with you!
                         </p>
                         <div class="contact-info">
@@ -758,16 +765,27 @@
         <i class="fas fa-adjust"></i>
     </div>
     <script src="app.js"></script>
+    <style>
+        #intro-content {
+            text-align: justify;
+        }
+    </style>
     <script>
         var typed = new Typed('#intro-name', {
-            strings: ["Hello, I'm Kiran patil"],
+            strings: ["Greetings, I'm Kiran Patil,"],
             typeSpeed: 50,
             startDelay: 1000,
             showCursor: false,
             onComplete: (arrayPos, self) => {
                 const introContent = document.getElementById('intro-content');
                 introContent.classList.add('fade-anim');
-                introContent.innerText = "A passionate robotics engineer exploring the exciting realms of Deep Learning and Computer Vision.Currently a Robotics Grad student @University of Maryland - College Park.";
+                introContent.innerHTML = `
+                A robotics engineer delving into the fascinating domains of Deep Learning and Computer Vision. 
+                In my previous experiences, I've engaged in projects that span not only CV and DL, but also encompass 
+                Motion-Planning, Localization, Sensor Integration and Software Development.
+                <br><br>
+                Presently, I am pursuing a master's degree in Robotics at the University of Maryland - College Park.
+                `;
             }
         });
     </script>
